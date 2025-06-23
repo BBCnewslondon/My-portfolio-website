@@ -1,0 +1,384 @@
+// Mobile Navigation Toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+}));
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Typing Animation
+const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
+
+const textArray = ["Computational Physicist", "Data Analyst", "Research Scientist", "Quant Developer", "Machine Learning Engineer"];
+const typingDelay = 200;
+const erasingDelay = 100;
+const newTextDelay = 2000;
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+    if (charIndex < textArray[textArrayIndex].length) {
+        if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+    } else {
+        cursorSpan.classList.remove("typing");
+        setTimeout(erase, newTextDelay);
+    }
+}
+
+function erase() {
+    if (charIndex > 0) {
+        if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+    } else {
+        cursorSpan.classList.remove("typing");
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, typingDelay + 1100);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (textArray.length) setTimeout(type, newTextDelay + 250);
+});
+
+// Navbar background on scroll
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(15, 20, 25, 0.98)';
+        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+    } else {
+        navbar.style.background = 'rgba(15, 20, 25, 0.95)';
+        navbar.style.boxShadow = 'none';
+    }
+});
+
+// Intersection Observer for animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Animate elements on scroll
+document.addEventListener('DOMContentLoaded', () => {
+    const animateElements = document.querySelectorAll('.skill-category, .project-card, .stat');
+    
+    animateElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(element);
+    });
+});
+
+// Contact form handling
+const contactForm = document.querySelector('.contact-form');
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(contactForm);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+    
+    // Simple validation
+    if (!name || !email || !message) {
+        alert('Please fill in all fields.');
+        return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    
+    // Simulate form submission
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+    
+    setTimeout(() => {
+        alert('Thank you for your message! I\'ll get back to you soon.');
+        contactForm.reset();
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+    }, 1500);
+});
+
+// Add active class to current nav item based on scroll position
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Parallax effect for hero section
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    const rate = scrolled * -0.5;
+    
+    if (hero) {
+        hero.style.transform = `translateY(${rate}px)`;
+    }
+});
+
+// Add smooth reveal animation to sections
+const revealSections = document.querySelectorAll('section');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+revealSections.forEach(section => {
+    section.classList.add('hidden');
+    revealObserver.observe(section);
+});
+
+// Add CSS for reveal animation
+const style = document.createElement('style');
+style.textContent = `
+    .hidden {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease;
+    }
+    
+    .revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .nav-link.active {
+        color: #2563eb;
+    }
+    
+    .nav-link.active::after {
+        width: 100%;
+    }
+`;
+document.head.appendChild(style);
+
+// Particle effect for physics theme
+function createParticles() {
+    const particlesContainer = document.createElement('div');
+    particlesContainer.className = 'particles';
+    particlesContainer.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+    `;
+    
+    document.body.appendChild(particlesContainer);
+    
+    for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(96, 165, 250, 0.3);
+            border-radius: 50%;
+            animation: float-particle ${Math.random() * 20 + 10}s linear infinite;
+            top: ${Math.random() * 100}vh;
+            left: ${Math.random() * 100}vw;
+            animation-delay: ${Math.random() * 20}s;
+        `;
+        particlesContainer.appendChild(particle);
+    }
+}
+
+// Add particle animation CSS
+const particleStyle = document.createElement('style');
+particleStyle.textContent = `
+    @keyframes float-particle {
+        0% {
+            transform: translateY(0) translateX(0);
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.3;
+        }
+        90% {
+            opacity: 0.1;
+        }
+        100% {
+            transform: translateY(-100vh) translateX(${Math.random() * 200 - 100}px);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(particleStyle);
+
+// Initialize particles when page loads
+document.addEventListener('DOMContentLoaded', createParticles);
+
+// Sierpiński Triangle Fractal Animation
+class SierpinskiTriangle {
+    constructor(canvasId) {
+        this.canvas = document.getElementById(canvasId);
+        this.ctx = this.canvas.getContext('2d');
+        this.points = [];
+        this.currentPoint = null;
+        this.vertices = [];
+        this.animationFrame = 0;
+        this.init();
+    }
+
+    init() {
+        this.resizeCanvas();
+        this.setupVertices();
+        this.currentPoint = {
+            x: this.canvas.width / 2,
+            y: this.canvas.height / 2
+        };
+        this.animate();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            this.resizeCanvas();
+            this.setupVertices();
+            this.points = [];
+        });
+    }
+
+    resizeCanvas() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+    }
+
+    setupVertices() {
+        const width = this.canvas.width;
+        const height = this.canvas.height;
+        const size = Math.min(width, height) * 0.8;
+        const centerX = width / 2;
+        const centerY = height / 2;
+
+        // Three vertices of an equilateral triangle
+        this.vertices = [
+            { x: centerX, y: centerY - size / 2 }, // Top
+            { x: centerX - size / 2, y: centerY + size / 2 }, // Bottom left
+            { x: centerX + size / 2, y: centerY + size / 2 }  // Bottom right
+        ];
+    }
+
+    drawPoint(x, y, alpha = 1) {
+        this.ctx.fillStyle = `rgba(96, 165, 250, ${alpha})`;
+        this.ctx.fillRect(x, y, 1, 1);
+    }
+
+    animate() {
+        // Clear canvas with fade effect
+        this.ctx.fillStyle = 'rgba(12, 16, 32, 0.02)';
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+        // Generate multiple points per frame for faster generation
+        for (let i = 0; i < 50; i++) {
+            // Choose random vertex
+            const randomVertex = this.vertices[Math.floor(Math.random() * 3)];
+            
+            // Move halfway to the chosen vertex
+            this.currentPoint.x = (this.currentPoint.x + randomVertex.x) / 2;
+            this.currentPoint.y = (this.currentPoint.y + randomVertex.y) / 2;
+            
+            // Draw the point
+            this.drawPoint(this.currentPoint.x, this.currentPoint.y, 0.8);
+            
+            // Store point for potential effects
+            this.points.push({
+                x: this.currentPoint.x,
+                y: this.currentPoint.y,
+                age: 0
+            });
+        }
+
+        // Limit points array size for performance
+        if (this.points.length > 10000) {
+            this.points = this.points.slice(-5000);
+        }
+
+        // Add subtle glow effect to recent points
+        this.points.forEach((point, index) => {
+            if (point.age < 100) {
+                const alpha = (100 - point.age) / 100 * 0.3;
+                this.drawPoint(point.x, point.y, alpha);
+                point.age++;
+            }
+        });
+
+        this.animationFrame++;
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
+// Initialize Sierpiński Triangle when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    new SierpinskiTriangle('sierpinski-canvas');
+});

@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Open Portfolio Website",
+			"type": "shell",
+			"command": "start",
+			"args": [
+				"index.html"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"isBackground": false
+		}
+	]
+}

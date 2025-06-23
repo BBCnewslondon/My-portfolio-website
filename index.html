@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armaan Sachdeva - Portfolio</title>    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">            <div class="nav-logo">
+                <a href="#home">Armaan Sachdeva</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>    </nav>    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas class="sierpinski-canvas" id="sierpinski-canvas"></canvas>
+        <div class="physics-equations">
+            <div class="equation equation-1">E = mc²</div>
+            <div class="equation equation-2">∇ · E = ρ/ε₀</div>
+            <div class="equation equation-3">Ψ(x,t) = Ae^(i(kx-ωt))</div>
+            <div class="equation equation-4">F = ma</div>
+            <div class="equation equation-5">∫∇²φ dV = ∮∇φ·n̂ dA</div>
+            <div class="equation equation-6">ℏ²∇²Ψ + VΨ = EΨ</div>
+            <div class="equation equation-7">∇ × E = -∂B/∂t</div>
+            <div class="equation equation-8">∇ · B = 0</div>
+            <div class="equation equation-9">∇ × B = μ₀J + μ₀ε₀∂E/∂t</div>
+            <div class="equation equation-10">Gμν = 8πTμν</div>
+            <div class="equation equation-11">Rμν - ½gμνR = 8πGTμν/c⁴</div>
+            <div class="equation equation-12">∇μTμν = 0</div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Armaan Sachdeva</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Physics Student & <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+                </p>
+                <p class="hero-description">
+                    Physics student with a minor in Mathematics and Data Analysis. Experienced in computational physics, machine learning, and quantitative analysis with a passion for solving complex problems through code.
+                </p>                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="Armaan Sachdeva-CV.pdf" class="btn btn-secondary" target="_blank">Download CV</a>
+                </div>
+            </div>            <div class="hero-image">
+                <div class="profile-photo">
+                    <img src="1703122199168.jpeg" alt="Armaan Sachdeva" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a Physics student with a minor in Mathematics and Data Analysis, passionate about applying 
+                        computational methods to solve complex scientific problems. My experience spans from theoretical 
+                        physics simulations to practical machine learning applications in research environments.
+                    </p>
+                    <p>
+                        Currently working at a quantitative trading startup, I bring together my physics background with 
+                        programming expertise to analyze data and build predictive models. My research experience includes 
+                        summer work as a research scientist studying liquid crystals and developing automated analysis systems.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>8+</h3>
+                            <p>Major Projects</p>
+                        </div>
+                        <div class="stat">
+                            <h3>3+</h3>
+                            <p>Research Papers</p>
+                        </div>
+                        <div class="stat">
+                            <h3>2+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                </div>                <div class="about-image">
+                    <div class="about-photo">
+                        <img src="1703122199168.jpeg" alt="Armaan Sachdeva" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming & Scientific Computing</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>                        <div class="skill-item">
+                            <i class="fab fa-rust"></i>
+                            <span>Rust</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Analysis & ML</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>NumPy/SciPy</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Pandas</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Systems & Security</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Penetration Testing</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-file-alt"></i>
+                            <span>LaTeX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Neutron Random Walk Simulation</h3>
+                        <p>3D computational simulation modeling the random walk behavior of neutrons produced from U-235 fission. Implements Monte Carlo methods to track particle trajectories and collision probabilities.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">3D Visualization</span>
+                            <span class="tech-tag">Monte Carlo</span>
+                        </div>                        <div class="project-links">
+                            <a href="project.ipynb" class="project-link" target="_blank">
+                                <i class="fab fa-python"></i> Jupyter Notebook
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Liquid Crystal ML Analysis & Research</h3>
+                        <p>Machine learning model to automate wavelength transmission analysis in liquid crystals. Developed during summer research position to streamline optical property characterization. Presented findings at university research expo with comprehensive poster presentation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Optical Analysis</span>
+                            <span class="tech-tag">Research Presentation</span>
+                        </div>                        <div class="project-links">
+                            <a href="Optomel condensed.ipynb" class="project-link" target="_blank">
+                                <i class="fab fa-python"></i> Research Code
+                            </a>
+                            <a href="expo poster (2).pdf" class="project-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i> Research Poster
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-route"></i>
+                        </div>
+                    </div>                    <div class="project-content">
+                        <h3>Delivery Route Optimization</h3>
+                        <p>Proprietary shortest path mapping system developed in collaboration with a commercial partner. Optimizes delivery routes using advanced graph algorithms to minimize delivery time and costs.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Graph Theory</span>
+                            <span class="tech-tag">Optimization</span>
+                            <span class="tech-tag">Commercial Software</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" style="opacity: 0.6; cursor: not-allowed;">
+                                <i class="fas fa-lock"></i> Proprietary
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                    </div>                    <div class="project-content">
+                        <h3>Custom Web Browser</h3>
+                        <p>Proprietary web browser developed in collaboration with a commercial partner. Features custom rendering engine, JavaScript support, and security-focused architecture with Docker containerization.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Web Standards</span>
+                            <span class="tech-tag">Commercial Software</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" style="opacity: 0.6; cursor: not-allowed;">
+                                <i class="fas fa-lock"></i> Proprietary
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-virus"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>COVID-19 Mathematical Modeling</h3>
+                        <p>Research paper on mathematical modeling of disease spread using compartmental models. Applied SIR/SEIR models to analyze COVID-19 transmission dynamics and intervention strategies.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Mathematical Modeling</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Epidemiology</span>
+                            <span class="tech-tag">LaTeX</span>
+                        </div>                        <div class="project-links">
+                            <a href="Compartmental_Models_for COVID_Armaan_Sachdeva.pdf" class="project-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i> Research Paper
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-charging-station"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Charge Configuration Simulation</h3>
+                        <p>Computational physics simulation to find minimum energy configurations for electric charges on a conducting disk. Implements optimization algorithms and electrostatic theory.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Physics Simulation</span>
+                            <span class="tech-tag">Optimization</span>
+                            <span class="tech-tag">Electrostatics</span>
+                        </div>                        <div class="project-links">
+                            <a href="Electric distro.py" class="project-link" target="_blank">
+                                <i class="fab fa-python"></i> Python Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-play"></i> Simulation
+                            </a>
+                        </div>
+                    </div>            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">                <div class="contact-info">
+                    <h3>Let's Connect!</h3>
+                    <p>I'm always interested in discussing physics, computational problems, research opportunities, or potential collaborations in quantitative analysis and machine learning.</p>
+                    <div class="contact-items">                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>as46g22@soton.ac.uk</span>
+                        </div>                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>www.linkedin.com/in/armaan-sachdeva-79b68b214</span>
+                        </div>                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/BBCnewslondon</span>
+                        </div>                        <div class="contact-item">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Research Papers & Publications</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-download"></i>
+                            <a href="Armaan Sachdeva-CV.pdf" target="_blank" style="color: inherit; text-decoration: none;">
+                                <span>Download CV</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">            <div class="footer-content">
+                <p>&copy; 2025 Armaan Sachdeva. All rights reserved.</p>                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
