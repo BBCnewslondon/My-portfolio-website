@@ -584,11 +584,11 @@ function ensureMobileProjectsVisibility() {
                 padding: 0 15px !important;
             `;
         }
-        
-        projectCards.forEach((card, index) => {
+          projectCards.forEach((card, index) => {
             card.style.cssText = `
                 display: block !important;
                 background: #1e3a5f !important;
+                background-image: none !important;
                 border: 3px solid #60a5fa !important;
                 border-radius: 8px !important;
                 margin: 0 0 20px 0 !important;
@@ -601,6 +601,10 @@ function ensureMobileProjectsVisibility() {
                 transform: none !important;
                 position: relative !important;
                 z-index: ${index + 1} !important;
+                overflow: hidden !important;
+                box-sizing: border-box !important;
+                padding: 0 !important;
+                min-height: auto !important;
             `;
             
             // Ensure content is visible
@@ -609,9 +613,16 @@ function ensureMobileProjectsVisibility() {
                 content.style.cssText = `
                     display: block !important;
                     padding: 15px !important;
+                    background: #1e3a5f !important;
+                    background-image: none !important;
                     color: white !important;
                     visibility: visible !important;
                     opacity: 1 !important;
+                    width: 100% !important;
+                    box-sizing: border-box !important;
+                    margin: 0 !important;
+                    border-radius: 0 0 5px 5px !important;
+                    min-height: 180px !important;
                 `;
                 
                 const title = content.querySelector('h3');
