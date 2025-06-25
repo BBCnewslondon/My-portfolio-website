@@ -553,3 +553,111 @@ class SierpinskiTriangle {
 document.addEventListener('DOMContentLoaded', () => {
     new SierpinskiTriangle('sierpinski-canvas');
 });
+
+// Mobile Projects Section Fix
+function ensureMobileProjectsVisibility() {
+    // Check if we're on mobile
+    if (window.innerWidth <= 768) {
+        const projectsSection = document.querySelector('.projects');
+        const projectsGrid = document.querySelector('.projects-grid');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        if (projectsSection) {
+            // Force visible styles
+            projectsSection.style.cssText = `
+                background: #1a1f2e !important;
+                background-image: none !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                padding: 60px 0 !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            `;
+        }
+        
+        if (projectsGrid) {
+            projectsGrid.style.cssText = `
+                display: block !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 15px !important;
+            `;
+        }
+        
+        projectCards.forEach((card, index) => {
+            card.style.cssText = `
+                display: block !important;
+                background: #1e3a5f !important;
+                border: 3px solid #60a5fa !important;
+                border-radius: 8px !important;
+                margin: 0 0 20px 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                transform: none !important;
+                position: relative !important;
+                z-index: ${index + 1} !important;
+            `;
+            
+            // Ensure content is visible
+            const content = card.querySelector('.project-content');
+            if (content) {
+                content.style.cssText = `
+                    display: block !important;
+                    padding: 15px !important;
+                    color: white !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                `;
+                
+                const title = content.querySelector('h3');
+                const description = content.querySelector('p');
+                
+                if (title) {
+                    title.style.cssText = `
+                        color: #ffffff !important;
+                        font-size: 1.1rem !important;
+                        margin-bottom: 8px !important;
+                        display: block !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                    `;
+                }
+                
+                if (description) {
+                    description.style.cssText = `
+                        color: #e5e7eb !important;
+                        font-size: 0.9rem !important;
+                        line-height: 1.4 !important;
+                        margin-bottom: 12px !important;
+                        display: block !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                    `;
+                }
+            }
+        });
+        
+        // Force repaint
+        setTimeout(() => {
+            projectsSection?.style.transform = 'translateZ(0)';
+            projectCards.forEach(card => {
+                card.style.transform = 'translateZ(0)';
+            });
+        }, 100);
+    }
+}
+
+// Run on page load and resize
+document.addEventListener('DOMContentLoaded', ensureMobileProjectsVisibility);
+window.addEventListener('resize', ensureMobileProjectsVisibility);
+window.addEventListener('orientationchange', () => {
+    setTimeout(ensureMobileProjectsVisibility, 500);
+});
+
+// Force run after a short delay to ensure everything is loaded
+setTimeout(ensureMobileProjectsVisibility, 1000);
