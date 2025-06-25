@@ -561,11 +561,13 @@ function ensureMobileProjectsVisibility() {
         const projectsSection = document.querySelector('.projects');
         const projectsGrid = document.querySelector('.projects-grid');
         const projectCards = document.querySelectorAll('.project-card');
+        const projectImages = document.querySelectorAll('.project-image');
+        const projectContents = document.querySelectorAll('.project-content');
         
         if (projectsSection) {
-            // Force visible styles
+            // Force visible styles for projects section
             projectsSection.style.cssText = `
-                background: #1a1f2e !important;
+                background-color: #1a1f2e !important;
                 background-image: none !important;
                 backdrop-filter: none !important;
                 -webkit-backdrop-filter: none !important;
@@ -573,6 +575,7 @@ function ensureMobileProjectsVisibility() {
                 display: block !important;
                 visibility: visible !important;
                 opacity: 1 !important;
+                min-height: auto !important;
             `;
         }
         
@@ -584,16 +587,19 @@ function ensureMobileProjectsVisibility() {
                 padding: 0 15px !important;
             `;
         }
-          projectCards.forEach((card, index) => {
+        
+        // Enhanced project cards styling with background fallbacks
+        projectCards.forEach((card, index) => {
             card.style.cssText = `
                 display: block !important;
-                background: #1e3a5f !important;
+                background-color: #1e3a5f !important;
                 background-image: none !important;
                 border: 3px solid #60a5fa !important;
                 border-radius: 8px !important;
                 margin: 0 0 20px 0 !important;
                 width: 100% !important;
                 max-width: 100% !important;
+                min-height: 300px !important;
                 backdrop-filter: none !important;
                 -webkit-backdrop-filter: none !important;
                 visibility: visible !important;
@@ -604,16 +610,75 @@ function ensureMobileProjectsVisibility() {
                 overflow: hidden !important;
                 box-sizing: border-box !important;
                 padding: 0 !important;
-                min-height: auto !important;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5) !important;
+                background-clip: padding-box !important;
+                -webkit-background-clip: padding-box !important;
             `;
             
-            // Ensure content is visible
-            const content = card.querySelector('.project-content');
+            // Add solid background div as fallback
+            const existingBg = card.querySelector('.mobile-bg-fix');
+            if (!existingBg) {
+                const bgDiv = document.createElement('div');
+                bgDiv.className = 'mobile-bg-fix';
+                bgDiv.style.cssText = `
+                    position: absolute !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    right: 0 !important;
+                    bottom: 0 !important;
+                    background-color: #1e3a5f !important;
+                    z-index: -1 !important;
+                    pointer-events: none !important;
+                `;
+                card.appendChild(bgDiv);
+            }
+        });
+        
+        // Enhanced project images styling
+        projectImages.forEach(image => {
+            if (image) {
+                image.style.cssText = `
+                    background-color: #2563eb !important;
+                    background-image: none !important;
+                    height: 120px !important;
+                    width: 100% !important;
+                    border-radius: 5px 5px 0 0 !important;
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    position: relative !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    box-sizing: border-box !important;
+                `;
+                
+                // Add image background fallback
+                const existingImgBg = image.querySelector('.mobile-img-bg');
+                if (!existingImgBg) {
+                    const imgBgDiv = document.createElement('div');
+                    imgBgDiv.className = 'mobile-img-bg';
+                    imgBgDiv.style.cssText = `
+                        position: absolute !important;
+                        top: 0 !important;
+                        left: 0 !important;
+                        right: 0 !important;
+                        bottom: 0 !important;
+                        background-color: #2563eb !important;
+                        z-index: -1 !important;
+                        pointer-events: none !important;
+                    `;
+                    image.appendChild(imgBgDiv);
+                }
+            }
+        });
+        
+        // Enhanced project content styling
+        projectContents.forEach(content => {
             if (content) {
                 content.style.cssText = `
                     display: block !important;
                     padding: 15px !important;
-                    background: #1e3a5f !important;
+                    background-color: #1e3a5f !important;
                     background-image: none !important;
                     color: white !important;
                     visibility: visible !important;
@@ -623,8 +688,28 @@ function ensureMobileProjectsVisibility() {
                     margin: 0 !important;
                     border-radius: 0 0 5px 5px !important;
                     min-height: 180px !important;
+                    position: relative !important;
                 `;
                 
+                // Add content background fallback
+                const existingContentBg = content.querySelector('.mobile-content-bg');
+                if (!existingContentBg) {
+                    const contentBgDiv = document.createElement('div');
+                    contentBgDiv.className = 'mobile-content-bg';
+                    contentBgDiv.style.cssText = `
+                        position: absolute !important;
+                        top: 0 !important;
+                        left: 0 !important;
+                        right: 0 !important;
+                        bottom: 0 !important;
+                        background-color: #1e3a5f !important;
+                        z-index: -1 !important;
+                        pointer-events: none !important;
+                    `;
+                    content.appendChild(contentBgDiv);
+                }
+                
+                // Ensure text elements are visible
                 const title = content.querySelector('h3');
                 const description = content.querySelector('p');
                 
@@ -636,6 +721,8 @@ function ensureMobileProjectsVisibility() {
                         display: block !important;
                         visibility: visible !important;
                         opacity: 1 !important;
+                        position: relative !important;
+                        z-index: 1 !important;
                     `;
                 }
                 
@@ -648,14 +735,18 @@ function ensureMobileProjectsVisibility() {
                         display: block !important;
                         visibility: visible !important;
                         opacity: 1 !important;
+                        position: relative !important;
+                        z-index: 1 !important;
                     `;
                 }
             }
         });
         
-        // Force repaint
+        // Force hardware acceleration and repaint
         setTimeout(() => {
-            projectsSection?.style.transform = 'translateZ(0)';
+            if (projectsSection) {
+                projectsSection.style.transform = 'translateZ(0)';
+            }
             projectCards.forEach(card => {
                 card.style.transform = 'translateZ(0)';
             });
@@ -670,5 +761,7 @@ window.addEventListener('orientationchange', () => {
     setTimeout(ensureMobileProjectsVisibility, 500);
 });
 
-// Force run after a short delay to ensure everything is loaded
+// Force run multiple times to ensure everything is loaded
+setTimeout(ensureMobileProjectsVisibility, 500);
 setTimeout(ensureMobileProjectsVisibility, 1000);
+setTimeout(ensureMobileProjectsVisibility, 2000);
