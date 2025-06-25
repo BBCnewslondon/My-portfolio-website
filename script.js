@@ -145,6 +145,177 @@ contactForm.addEventListener('submit', function(e) {
     }, 1500);
 });
 
+// Contact Form Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleFormSubmit);
+    }
+});
+
+function handleFormSubmit(e) {
+    e.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        message: document.getElementById('message').value.trim()
+    };
+    
+    // Validate form data
+    if (!validateForm(formData)) {
+        return;
+    }
+    
+    // Show loading state
+    showLoadingState();
+    
+    // Choose your preferred submission method:
+    // Option 1: Email client (most reliable, no backend needed)
+    submitViaEmailClient(formData);
+    
+    // Option 2: Formspree (uncomment to use)
+    // submitViaFormspree(formData);
+    
+    // Option 3: EmailJS (uncomment to use)
+    // submitViaEmailJS(formData);
+}
+
+function validateForm(data) {
+    const { name, email, message } = data;
+    
+    if (!name || name.length < 2) {
+        showMessage('Please enter a valid name (at least 2 characters)', 'error');
+        return false;
+    }
+    
+    if (!isValidEmail(email)) {
+        showMessage('Please enter a valid email address', 'error');
+        return false;
+    }
+    
+    if (!message || message.length < 10) {
+        showMessage('Please enter a message (at least 10 characters)', 'error');
+        return false;
+    }
+    
+    return true;
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Option 1: Email Client (Most Reliable)
+function submitViaEmailClient(data) {
+    const subject = `Portfolio Contact: ${data.name}`;
+    const body = `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`;
+    const mailtoLink = `mailto:as46g22@soton.ac.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    window.location.href = mailtoLink;
+    
+    setTimeout(() => {
+        showMessage('Email client opened! Please send the email to complete your message.', 'success');
+        resetForm();
+        hideLoadingState();
+    }, 1000);
+}
+
+// Option 2: Formspree (Free service, requires setup)
+async function submitViaFormspree(data) {
+    try {
+        const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+            showMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
+            resetForm();
+        } else {
+            throw new Error('Failed to send message');
+        }
+    } catch (error) {
+        showMessage('Failed to send message. Please try again or contact me directly.', 'error');
+    } finally {
+        hideLoadingState();
+    }
+}
+
+// Option 3: EmailJS (Free service, requires setup)
+async function submitViaEmailJS(data) {
+    try {
+        // You need to include EmailJS library and configure it
+        await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+            from_name: data.name,
+            from_email: data.email,
+            message: data.message,
+            to_email: 'as46g22@soton.ac.uk'
+        });
+        
+        showMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
+        resetForm();
+    } catch (error) {
+        showMessage('Failed to send message. Please try again or contact me directly.', 'error');
+    } finally {
+        hideLoadingState();
+    }
+}
+
+function showLoadingState() {
+    const submitBtn = document.querySelector('.contact-form button[type="submit"]');
+    if (submitBtn) {
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+    }
+}
+
+function hideLoadingState() {
+    const submitBtn = document.querySelector('.contact-form button[type="submit"]');
+    if (submitBtn) {
+        submitBtn.textContent = 'Send Message';
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+    }
+}
+
+function showMessage(text, type) {
+    // Remove any existing messages
+    const existingMessage = document.querySelector('.form-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Create new message element
+    const message = document.createElement('div');
+    message.className = `form-message form-message--${type}`;
+    message.textContent = text;
+    
+    // Insert message before the form
+    const contactForm = document.querySelector('.contact-form');
+    contactForm.parentNode.insertBefore(message, contactForm);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        if (message.parentNode) {
+            message.remove();
+        }
+    }, 5000);
+}
+
+function resetForm() {
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.reset();
+    }
+}
+
 // Add active class to current nav item based on scroll position
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section[id]');
