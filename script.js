@@ -561,12 +561,11 @@ function ensureMobileProjectsVisibility() {
         const projectsSection = document.querySelector('.projects');
         const projectsGrid = document.querySelector('.projects-grid');
         const projectCards = document.querySelectorAll('.project-card');
-        const projectImages = document.querySelectorAll('.project-image');
-        const projectContents = document.querySelectorAll('.project-content');
         
         if (projectsSection) {
-            // Force visible styles for projects section
+            // Ultra-aggressive projects section styling
             projectsSection.style.cssText = `
+                background: #1a1f2e !important;
                 background-color: #1a1f2e !important;
                 background-image: none !important;
                 backdrop-filter: none !important;
@@ -576,6 +575,9 @@ function ensureMobileProjectsVisibility() {
                 visibility: visible !important;
                 opacity: 1 !important;
                 min-height: auto !important;
+                position: relative !important;
+                z-index: auto !important;
+                overflow: visible !important;
             `;
         }
         
@@ -585,144 +587,148 @@ function ensureMobileProjectsVisibility() {
                 width: 100% !important;
                 margin: 0 !important;
                 padding: 0 15px !important;
+                box-sizing: border-box !important;
             `;
         }
         
-        // Enhanced project cards styling with background fallbacks
+        // Completely rebuild each project card
         projectCards.forEach((card, index) => {
+            // Remove any existing mobile background fixes
+            const existingBgs = card.querySelectorAll('.mobile-bg-fix, .mobile-img-bg, .mobile-content-bg');
+            existingBgs.forEach(bg => bg.remove());
+            
+            // Reset all styles and rebuild from scratch
             card.style.cssText = `
+                all: unset !important;
                 display: block !important;
-                background-color: #1e3a5f !important;
-                background-image: none !important;
+                width: 100% !important;
+                margin: 0 0 20px 0 !important;
                 border: 3px solid #60a5fa !important;
                 border-radius: 8px !important;
-                margin: 0 0 20px 0 !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                min-height: 300px !important;
-                backdrop-filter: none !important;
-                -webkit-backdrop-filter: none !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                transform: none !important;
-                position: relative !important;
-                z-index: ${index + 1} !important;
                 overflow: hidden !important;
                 box-sizing: border-box !important;
-                padding: 0 !important;
+                background: #1e3a5f !important;
+                background-color: #1e3a5f !important;
+                background-image: none !important;
+                opacity: 1 !important;
+                visibility: visible !important;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5) !important;
-                background-clip: padding-box !important;
-                -webkit-background-clip: padding-box !important;
+                position: relative !important;
+                z-index: ${index + 1} !important;
+                transform: none !important;
+                transition: none !important;
+                -webkit-transform: translateZ(0) !important;
+                transform: translateZ(0) !important;
+                min-height: 300px !important;
+                font-family: inherit !important;
             `;
             
-            // Add solid background div as fallback
-            const existingBg = card.querySelector('.mobile-bg-fix');
-            if (!existingBg) {
-                const bgDiv = document.createElement('div');
-                bgDiv.className = 'mobile-bg-fix';
-                bgDiv.style.cssText = `
+            // Create and insert primary background layer
+            const primaryBg = document.createElement('div');
+            primaryBg.className = 'mobile-primary-bg';
+            primaryBg.style.cssText = `
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                background: #1e3a5f !important;
+                background-color: #1e3a5f !important;
+                background-image: none !important;
+                z-index: -10 !important;
+                pointer-events: none !important;
+                opacity: 1 !important;
+            `;
+            card.insertBefore(primaryBg, card.firstChild);
+            
+            // Handle project image
+            const projectImage = card.querySelector('.project-image');
+            if (projectImage) {
+                projectImage.style.cssText = `
+                    all: unset !important;
+                    display: block !important;
+                    width: 100% !important;
+                    height: 120px !important;
+                    background: #2563eb !important;
+                    background-color: #2563eb !important;
+                    background-image: none !important;
+                    border-radius: 5px 5px 0 0 !important;
+                    position: relative !important;
+                    overflow: hidden !important;
+                    box-sizing: border-box !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                `;
+                
+                // Add image background layer
+                const imgBg = document.createElement('div');
+                imgBg.className = 'mobile-img-bg';
+                imgBg.style.cssText = `
                     position: absolute !important;
                     top: 0 !important;
                     left: 0 !important;
-                    right: 0 !important;
-                    bottom: 0 !important;
-                    background-color: #1e3a5f !important;
-                    z-index: -1 !important;
-                    pointer-events: none !important;
-                `;
-                card.appendChild(bgDiv);
-            }
-        });
-        
-        // Enhanced project images styling
-        projectImages.forEach(image => {
-            if (image) {
-                image.style.cssText = `
+                    width: 100% !important;
+                    height: 100% !important;
+                    background: #2563eb !important;
                     background-color: #2563eb !important;
-                    background-image: none !important;
-                    height: 120px !important;
-                    width: 100% !important;
-                    border-radius: 5px 5px 0 0 !important;
-                    display: block !important;
-                    visibility: visible !important;
-                    opacity: 1 !important;
-                    position: relative !important;
-                    margin: 0 !important;
-                    padding: 0 !important;
-                    box-sizing: border-box !important;
+                    z-index: -1 !important;
                 `;
-                
-                // Add image background fallback
-                const existingImgBg = image.querySelector('.mobile-img-bg');
-                if (!existingImgBg) {
-                    const imgBgDiv = document.createElement('div');
-                    imgBgDiv.className = 'mobile-img-bg';
-                    imgBgDiv.style.cssText = `
-                        position: absolute !important;
-                        top: 0 !important;
-                        left: 0 !important;
-                        right: 0 !important;
-                        bottom: 0 !important;
-                        background-color: #2563eb !important;
-                        z-index: -1 !important;
-                        pointer-events: none !important;
-                    `;
-                    image.appendChild(imgBgDiv);
-                }
+                projectImage.insertBefore(imgBg, projectImage.firstChild);
             }
-        });
-        
-        // Enhanced project content styling
-        projectContents.forEach(content => {
-            if (content) {
-                content.style.cssText = `
+            
+            // Handle project content
+            const projectContent = card.querySelector('.project-content');
+            if (projectContent) {
+                projectContent.style.cssText = `
+                    all: unset !important;
                     display: block !important;
+                    width: 100% !important;
                     padding: 15px !important;
+                    background: #1e3a5f !important;
                     background-color: #1e3a5f !important;
                     background-image: none !important;
-                    color: white !important;
-                    visibility: visible !important;
-                    opacity: 1 !important;
-                    width: 100% !important;
-                    box-sizing: border-box !important;
-                    margin: 0 !important;
                     border-radius: 0 0 5px 5px !important;
+                    box-sizing: border-box !important;
                     min-height: 180px !important;
                     position: relative !important;
+                    overflow: hidden !important;
+                    font-family: inherit !important;
+                    color: white !important;
                 `;
                 
-                // Add content background fallback
-                const existingContentBg = content.querySelector('.mobile-content-bg');
-                if (!existingContentBg) {
-                    const contentBgDiv = document.createElement('div');
-                    contentBgDiv.className = 'mobile-content-bg';
-                    contentBgDiv.style.cssText = `
-                        position: absolute !important;
-                        top: 0 !important;
-                        left: 0 !important;
-                        right: 0 !important;
-                        bottom: 0 !important;
-                        background-color: #1e3a5f !important;
-                        z-index: -1 !important;
-                        pointer-events: none !important;
-                    `;
-                    content.appendChild(contentBgDiv);
-                }
+                // Add content background layer
+                const contentBg = document.createElement('div');
+                contentBg.className = 'mobile-content-bg';
+                contentBg.style.cssText = `
+                    position: absolute !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    width: 100% !important;
+                    height: 100% !important;
+                    background: #1e3a5f !important;
+                    background-color: #1e3a5f !important;
+                    z-index: -1 !important;
+                `;
+                projectContent.insertBefore(contentBg, projectContent.firstChild);
                 
                 // Ensure text elements are visible
-                const title = content.querySelector('h3');
-                const description = content.querySelector('p');
+                const title = projectContent.querySelector('h3');
+                const description = projectContent.querySelector('p');
+                const techTags = projectContent.querySelectorAll('.tech-tag');
+                const projectLinks = projectContent.querySelectorAll('.project-link');
                 
                 if (title) {
                     title.style.cssText = `
                         color: #ffffff !important;
                         font-size: 1.1rem !important;
-                        margin-bottom: 8px !important;
+                        margin: 0 0 8px 0 !important;
+                        padding: 0 !important;
+                        font-weight: 600 !important;
+                        line-height: 1.3 !important;
                         display: block !important;
-                        visibility: visible !important;
-                        opacity: 1 !important;
                         position: relative !important;
                         z-index: 1 !important;
+                        font-family: inherit !important;
                     `;
                 }
                 
@@ -731,26 +737,69 @@ function ensureMobileProjectsVisibility() {
                         color: #e5e7eb !important;
                         font-size: 0.9rem !important;
                         line-height: 1.4 !important;
-                        margin-bottom: 12px !important;
+                        margin: 0 0 12px 0 !important;
+                        padding: 0 !important;
                         display: block !important;
-                        visibility: visible !important;
-                        opacity: 1 !important;
                         position: relative !important;
                         z-index: 1 !important;
+                        font-family: inherit !important;
                     `;
                 }
+                
+                // Style tech tags
+                techTags.forEach(tag => {
+                    tag.style.cssText = `
+                        display: inline-block !important;
+                        background: #60a5fa !important;
+                        background-color: #60a5fa !important;
+                        color: #1e3a5f !important;
+                        padding: 3px 8px !important;
+                        border-radius: 10px !important;
+                        font-size: 0.75rem !important;
+                        font-weight: 600 !important;
+                        margin: 0 5px 5px 0 !important;
+                        font-family: inherit !important;
+                    `;
+                });
+                
+                // Style project links
+                projectLinks.forEach(link => {
+                    link.style.cssText = `
+                        display: inline-flex !important;
+                        align-items: center !important;
+                        gap: 4px !important;
+                        color: #93c5fd !important;
+                        text-decoration: none !important;
+                        font-weight: 500 !important;
+                        font-size: 0.85rem !important;
+                        margin-right: 8px !important;
+                        position: relative !important;
+                        z-index: 1 !important;
+                        font-family: inherit !important;
+                    `;
+                });
             }
         });
         
-        // Force hardware acceleration and repaint
+        // Force multiple repaints
         setTimeout(() => {
             if (projectsSection) {
                 projectsSection.style.transform = 'translateZ(0)';
+                projectsSection.offsetHeight; // Force reflow
             }
-            projectCards.forEach(card => {
+            projectCards.forEach((card, index) => {
                 card.style.transform = 'translateZ(0)';
+                card.offsetHeight; // Force reflow
             });
         }, 100);
+        
+        // Additional repaint after longer delay
+        setTimeout(() => {
+            projectCards.forEach(card => {
+                card.style.willChange = 'auto';
+                card.offsetHeight; // Force reflow
+            });
+        }, 500);
     }
 }
 
@@ -761,7 +810,9 @@ window.addEventListener('orientationchange', () => {
     setTimeout(ensureMobileProjectsVisibility, 500);
 });
 
-// Force run multiple times to ensure everything is loaded
+// Force run multiple times with increasing delays
+setTimeout(ensureMobileProjectsVisibility, 100);
 setTimeout(ensureMobileProjectsVisibility, 500);
 setTimeout(ensureMobileProjectsVisibility, 1000);
 setTimeout(ensureMobileProjectsVisibility, 2000);
+setTimeout(ensureMobileProjectsVisibility, 3000);

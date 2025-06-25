@@ -916,9 +916,10 @@ section {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
-    }/* Mobile-first project styling - Clean and Simple */
+    }/* Ultra-Simplified Mobile Project Styling */
 @media (max-width: 768px) {
     .projects {
+        background: #1a1f2e !important;
         background-color: #1a1f2e !important;
         background-image: none !important;
         backdrop-filter: none !important;
@@ -940,39 +941,51 @@ section {
         width: 100% !important;
     }
 
+    /* Completely rebuilt project card structure */
     .project-card {
+        /* Reset everything */
+        all: unset !important;
+        /* Build from scratch */
         display: block !important;
-        background-color: #1e3a5f !important;
-        background-image: none !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
+        width: 100% !important;
+        margin: 0 0 20px 0 !important;
         border: 3px solid #60a5fa !important;
         border-radius: 8px !important;
-        margin: 0 0 20px 0 !important;
-        padding: 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        min-height: 300px !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5) !important;
-        position: relative !important;
         overflow: hidden !important;
         box-sizing: border-box !important;
+        /* Solid background - multiple fallbacks */
+        background: #1e3a5f !important;
+        background-color: #1e3a5f !important;
+        background-image: none !important;
+        /* Remove any transparency effects */
+        opacity: 1 !important;
+        visibility: visible !important;
+        /* Shadow for visibility */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5) !important;
+        /* Positioning */
+        position: relative !important;
+        z-index: auto !important;
+        /* Remove animations */
         transform: none !important;
         transition: none !important;
-        /* Ensure solid background coverage */
-        background-clip: padding-box !important;
-        -webkit-background-clip: padding-box !important;
+        /* Ensure proper rendering */
+        -webkit-transform: translateZ(0) !important;
+        transform: translateZ(0) !important;
+        will-change: auto !important;
     }
 
+    /* Force solid background with pseudo-element */
     .project-card::before {
         content: '' !important;
         position: absolute !important;
         top: 0 !important;
         left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: #1e3a5f !important;
         background-color: #1e3a5f !important;
         z-index: -1 !important;
+        pointer-events: none !important;
     }
 
     .project-card:hover {
@@ -981,15 +994,17 @@ section {
     }
 
     .project-image {
+        /* Reset and rebuild */
+        all: unset !important;
         display: block !important;
+        width: 100% !important;
         height: 120px !important;
+        background: #2563eb !important;
         background-color: #2563eb !important;
         background-image: none !important;
         border-radius: 5px 5px 0 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 100% !important;
         position: relative !important;
+        overflow: hidden !important;
         box-sizing: border-box !important;
     }
 
@@ -998,8 +1013,9 @@ section {
         position: absolute !important;
         top: 0 !important;
         left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: #2563eb !important;
         background-color: #2563eb !important;
         z-index: -1 !important;
     }
@@ -1010,6 +1026,7 @@ section {
         justify-content: center !important;
         width: 50px !important;
         height: 50px !important;
+        background: rgba(255, 255, 255, 0.2) !important;
         background-color: rgba(255, 255, 255, 0.2) !important;
         border-radius: 50% !important;
         margin: 35px auto !important;
@@ -1024,16 +1041,19 @@ section {
     }
 
     .project-content {
+        /* Reset and rebuild */
+        all: unset !important;
         display: block !important;
+        width: 100% !important;
         padding: 15px !important;
+        background: #1e3a5f !important;
         background-color: #1e3a5f !important;
         background-image: none !important;
         border-radius: 0 0 5px 5px !important;
-        width: 100% !important;
         box-sizing: border-box !important;
-        margin: 0 !important;
         min-height: 180px !important;
         position: relative !important;
+        overflow: hidden !important;
     }
 
     .project-content::before {
@@ -1041,8 +1061,9 @@ section {
         position: absolute !important;
         top: 0 !important;
         left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: #1e3a5f !important;
         background-color: #1e3a5f !important;
         z-index: -1 !important;
     }
@@ -1082,6 +1103,7 @@ section {
 
     .tech-tag {
         display: inline-block !important;
+        background: #60a5fa !important;
         background-color: #60a5fa !important;
         color: #1e3a5f !important;
         padding: 3px 8px !important;
@@ -1291,5 +1313,66 @@ section {
         font-weight: 700 !important;
         position: relative !important;
         z-index: 10 !important;
+    }
+}
+
+/* Ultimate mobile fallback - forces solid backgrounds */
+@media (max-width: 768px) {
+    /* Nuclear option - force every element to have solid background */
+    .projects * {
+        background-attachment: scroll !important;
+        -webkit-background-attachment: scroll !important;
+    }
+    
+    .project-card, 
+    .project-card *,
+    .project-content,
+    .project-content *,
+    .project-image,
+    .project-image * {
+        background-clip: border-box !important;
+        -webkit-background-clip: border-box !important;
+        background-origin: padding-box !important;
+        -webkit-background-origin: padding-box !important;
+        background-size: auto !important;
+        -webkit-background-size: auto !important;
+        background-repeat: no-repeat !important;
+        background-position: 0 0 !important;
+        background-blend-mode: normal !important;
+        mix-blend-mode: normal !important;
+        isolation: auto !important;
+        will-change: auto !important;
+    }
+    
+    /* Force specific background colors with highest specificity */
+    .projects .project-card {
+        background: #1e3a5f !important;
+        background-color: #1e3a5f !important;
+    }
+    
+    .projects .project-image {
+        background: #2563eb !important;
+        background-color: #2563eb !important;
+    }
+    
+    .projects .project-content {
+        background: #1e3a5f !important;
+        background-color: #1e3a5f !important;
+    }
+    
+    /* Additional fallback with inline style simulation */
+    .project-card[style*="background"] {
+        background: #1e3a5f !important;
+        background-color: #1e3a5f !important;
+    }
+    
+    .project-image[style*="background"] {
+        background: #2563eb !important;
+        background-color: #2563eb !important;
+    }
+    
+    .project-content[style*="background"] {
+        background: #1e3a5f !important;
+        background-color: #1e3a5f !important;
     }
 }
