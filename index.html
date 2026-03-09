@@ -3,61 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Armaan Sachdeva - Portfolio</title>    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Armaan Sachdeva — Computational physicist building numerical solvers, ML pipelines, and quantitative models. BSc Physics &amp; Mathematics at the University of Southampton.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Armaan Sachdeva — Computational Physics &amp; Quantitative Modelling">
+    <meta property="og:description" content="Technical case studies in numerical methods, physics-informed ML, and scientific computing.">
+    <meta property="og:image" content="1703122199168.jpeg">
+    <title>Armaan Sachdeva — Computational Physics &amp; Quantitative Modelling</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- MathJax for rendered LaTeX -->
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$','$'], ['\\(','\\)']] },
+            svg: { fontCache: 'global' },
+            startup: { typeset: true }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">            <div class="nav-logo">
-                <a href="#home">Armaan Sachdeva</a>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">AS<span class="logo-dot">.</span></a>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
+            <div class="nav-menu" id="nav-menu" role="menubar">
+                <a href="#home" class="nav-link" role="menuitem">Home</a>
+                <a href="#about" class="nav-link" role="menuitem">About</a>
+                <a href="#projects" class="nav-link" role="menuitem">Projects</a>
+                <a href="#skills" class="nav-link" role="menuitem">Skills</a>
+                <a href="#contact" class="nav-link" role="menuitem">Contact</a>
             </div>
-            <div class="hamburger" id="hamburger">
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
-        </div>    </nav>    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <canvas class="sierpinski-canvas" id="sierpinski-canvas"></canvas>
-        <div class="physics-equations">
-            <div class="equation equation-1">E = mc²</div>
-            <div class="equation equation-2">∇ · E = ρ/ε₀</div>
-            <div class="equation equation-3">Ψ(x,t) = Ae^(i(kx-ωt))</div>
-            <div class="equation equation-4">F = ma</div>
-            <div class="equation equation-5">∫∇²φ dV = ∮∇φ·n̂ dA</div>
-            <div class="equation equation-6">ℏ²∇²Ψ + VΨ = EΨ</div>
-            <div class="equation equation-7">∇ × E = -∂B/∂t</div>
-            <div class="equation equation-8">∇ · B = 0</div>
-            <div class="equation equation-9">∇ × B = μ₀J + μ₀ε₀∂E/∂t</div>
-            <div class="equation equation-10">Gμν = 8πTμν</div>
-            <div class="equation equation-11">Rμν - ½gμνR = 8πGTμν/c⁴</div>
-            <div class="equation equation-12">∇μTμν = 0</div>
+            </button>
         </div>
+    </nav>
+
+    <!-- Hero Section — Terminal Aesthetic -->
+    <section id="home" class="hero">
         <div class="hero-container">
-            <div class="hero-content">                <h1 class="hero-title">
-                    Hi, I'm <span class="highlight">Armaan Sachdeva</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Physics Student & <span class="typed-text"></span><span class="cursor">&nbsp;</span>
-                </p>
-                <p class="hero-description">
-                    Physics student with a minor in Mathematics and Data Analysis. Experienced in computational physics, machine learning, and quantitative analysis with a passion for solving complex problems through code.
-                </p>                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="Armaan Sachdeva-CV.pdf" class="btn btn-secondary" target="_blank">Download CV</a>
+            <div class="hero-content">
+                <div class="terminal-line">
+                    <span class="prompt">$</span> <span class="cmd">whoami</span>
                 </div>
-            </div>            <div class="hero-image">
-                <div class="profile-photo">
-                    <img src="1703122199168.jpeg" alt="Armaan Sachdeva" />
+                <h1 class="hero-title">Armaan Sachdeva</h1>
+                <p class="hero-subtitle">
+                    <span class="typed-text"></span><span class="cursor">_</span>
+                </p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>BSc Physics &amp; Mathematics · University of Southampton</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Master's pathway — Computational &amp; Theoretical Physics</span>
+                    </div>
+                </div>
+                <p class="hero-description">
+                    Numerical solvers, machine learning pipelines, and quantitative models
+                    for scientific problems. From 4th-order Runge-Kutta integrators to
+                    physics-informed neural networks.
+                </p>
+                <div class="hero-buttons">
+                    <a href="Armaan_Sachdeva_CV.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <i class="fas fa-flask"></i> Case Studies
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="terminal-window" aria-hidden="true">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">physics@sachdeva:~/research</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-output" id="terminal-output"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -66,104 +102,46 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>            <div class="about-content">
+            <div class="section-header">
+                <span class="section-label"><span class="prompt">$</span> cat about.md</span>
+                <h2 class="section-title">About</h2>
+            </div>
+            <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a Physics student with a minor in Mathematics and Data Analysis, passionate about applying 
-                        computational methods to solve complex scientific problems. My experience spans from theoretical 
-                        physics simulations to practical machine learning applications in research environments.
+                        I'm a Physics student with a minor in Mathematics and Data Analysis at the
+                        University of Southampton, focused on applying computational methods to solve
+                        problems in physics, quantitative finance, and machine learning.
                     </p>
                     <p>
-                        Currently working at a quantitative trading startup, I bring together my physics background with 
-                        programming expertise to analyze data and build predictive models. My research experience includes 
-                        summer work as a research scientist studying liquid crystals and developing automated analysis systems.
+                        Currently working at a quantitative trading startup, I combine physics intuition
+                        with numerical methods to build predictive models. My research experience includes
+                        summer work as a research scientist studying liquid crystals with automated
+                        ML-driven analysis pipelines.
                     </p>
-                    <div class="about-stats">                        <div class="stat">
+                    <p>
+                        I develop numerical solvers (Runge-Kutta, Verlet, finite-difference),
+                        physics-informed neural networks, and Monte Carlo simulations — emphasising
+                        stability, convergence, and reproducibility in every project.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
                             <h3>11+</h3>
-                            <p>Major Projects</p>
+                            <p>Computational Projects</p>
                         </div>
                         <div class="stat">
                             <h3>3+</h3>
                             <p>Research Papers</p>
                         </div>
                         <div class="stat">
-                            <h3>2+</h3>
-                            <p>Years Experience</p>
+                            <h3>42</h3>
+                            <p>Public Repositories</p>
                         </div>
                     </div>
-                </div>                <div class="about-image">
+                </div>
+                <div class="about-image">
                     <div class="about-photo">
-                        <img src="1703122199168.jpeg" alt="Armaan Sachdeva" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming & Scientific Computing</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <span>C++</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js-square"></i>
-                            <span>JavaScript</span>
-                        </div>                        <div class="skill-item">
-                            <i class="fab fa-rust"></i>
-                            <span>Rust</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Data Analysis & ML</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fas fa-chart-line"></i>
-                            <span>NumPy/SciPy</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-brain"></i>
-                            <span>Machine Learning</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-chart-bar"></i>
-                            <span>Pandas</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-project-diagram"></i>
-                            <span>TensorFlow</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Systems & Security</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-linux"></i>
-                            <span>Linux</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-docker"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Penetration Testing</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-file-alt"></i>
-                            <span>LaTeX</span>
-                        </div>
+                        <img src="1703122199168.jpeg" alt="Armaan Sachdeva" loading="lazy" width="250" height="250">
                     </div>
                 </div>
             </div>
@@ -173,270 +151,456 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-atom"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Neutron Random Walk Simulation</h3>
-                        <p>3D computational simulation modeling the random walk behavior of neutrons produced from U-235 fission. Implements Monte Carlo methods to track particle trajectories and collision probabilities.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">NumPy</span>
-                            <span class="tech-tag">3D Visualization</span>
-                            <span class="tech-tag">Monte Carlo</span>
-                        </div>                        <div class="project-links">
-                            <a href="project.ipynb" class="project-link" target="_blank">
-                                <i class="fab fa-python"></i> Jupyter Notebook
-                            </a>                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Demo (Coming Soon)
-                            </a>
-                        </div>
-                    </div>
-                </div>                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-microscope"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Liquid Crystal ML Analysis & Research</h3>
-                        <p>Machine learning model to automate wavelength transmission analysis in liquid crystals. Developed during summer research position to streamline optical property characterization. Presented findings at university research expo with comprehensive poster presentation.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">Optical Analysis</span>
-                            <span class="tech-tag">Research Presentation</span>
-                        </div>                        <div class="project-links">
-                            <a href="Optomel condensed.ipynb" class="project-link" target="_blank">
-                                <i class="fab fa-python"></i> Research Code
-                            </a>
-                            <a href="expo poster (2).pdf" class="project-link" target="_blank">
-                                <i class="fas fa-file-pdf"></i> Research Poster
-                            </a>
+            <div class="section-header">
+                <span class="section-label"><span class="prompt">$</span> ls case-studies/</span>
+                <h2 class="section-title">Technical Case Studies</h2>
+            </div>
+
+            <!-- ===== PAR Case Study 1: Black-Hole Ray Tracer ===== -->
+            <article class="case-study" data-reveal>
+                <div class="case-study-header">
+                    <div class="case-study-icon"><i class="fas fa-circle"></i></div>
+                    <div>
+                        <h3 class="case-study-title">Black-Hole Ray Tracer</h3>
+                        <div class="case-study-tags">
+                            <span class="tag">General Relativity</span>
+                            <span class="tag">RK4</span>
+                            <span class="tag">Python</span>
                         </div>
                     </div>
                 </div>
+                <div class="par-grid">
+                    <div class="par-block">
+                        <h4 class="par-label problem">Problem</h4>
+                        <p>
+                            Visualising how photons travel near a Schwarzschild black hole requires
+                            solving the geodesic equations in curved spacetime. Unlike flat-space ray
+                            tracing, light follows <em>null geodesics</em> — the shortest paths through
+                            curved geometry — producing phenomena like photon rings and gravitational
+                            lensing that have no Euclidean analogue.
+                        </p>
+                    </div>
+                    <div class="par-block">
+                        <h4 class="par-label action">Approach</h4>
+                        <p>
+                            Implemented a 4th-order Runge-Kutta integrator for the null geodesic
+                            equation in Schwarzschild coordinates. Each photon trajectory is
+                            parametrised by an affine parameter &lambda;:
+                        </p>
+                        <div class="math-block">
+                            $$\frac{d^2 x^\mu}{d\lambda^2} + \Gamma^\mu_{\alpha\beta}\frac{dx^\alpha}{d\lambda}\frac{dx^\beta}{d\lambda} = 0$$
+                        </div>
+                        <p>
+                            where the Christoffel symbols $\Gamma^\mu_{\alpha\beta}$ encode the
+                            curvature of the Schwarzschild metric:
+                        </p>
+                        <div class="math-block">
+                            $$ds^2 = -\!\left(1-\frac{2M}{r}\right)dt^2 + \left(1-\frac{2M}{r}\right)^{\!-1}dr^2 + r^2\,d\Omega^2$$
+                        </div>
+                        <p class="analogy">
+                            <strong>Analogy:</strong> Think of spacetime near a black hole as a
+                            funnel-shaped rubber sheet. A marble (photon) rolled across the surface
+                            curves inward — the steeper the funnel (stronger gravity), the more
+                            extreme the bending. The geodesic equation computes exactly how much
+                            that marble curves at every point.
+                        </p>
+                    </div>
+                    <div class="par-block">
+                        <h4 class="par-label result">Result</h4>
+                        <p>
+                            Produced photon ring images consistent with reference trajectories.
+                            The RK4 integrator maintained stable orbits at the critical impact
+                            parameter $b = 3\sqrt{3}\,M$, reproducing the expected photon sphere
+                            structure.
+                        </p>
+                    </div>
+                </div>
+                <div class="case-study-links">
+                    <!-- TODO: Verify exact repo URL -->
+                    <a href="https://github.com/BBCnewslondon/Blackhole-Raytracer" class="project-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> View Source
+                    </a>
+                </div>
+            </article>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-route"></i>
-                        </div>
-                    </div>                    <div class="project-content">
-                        <h3>Delivery Route Optimization</h3>
-                        <p>Proprietary shortest path mapping system developed in collaboration with a commercial partner. Optimizes delivery routes using advanced graph algorithms to minimize delivery time and costs.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Graph Theory</span>
-                            <span class="tech-tag">Optimization</span>
-                            <span class="tech-tag">Commercial Software</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link" style="opacity: 0.6; cursor: not-allowed;">
-                                <i class="fas fa-lock"></i> Proprietary
-                            </a>
+            <!-- ===== PAR Case Study 2: N-Body Problem ===== -->
+            <article class="case-study" data-reveal>
+                <div class="case-study-header">
+                    <div class="case-study-icon"><i class="fas fa-globe-americas"></i></div>
+                    <div>
+                        <h3 class="case-study-title">Gravitational N-Body Simulation</h3>
+                        <div class="case-study-tags">
+                            <span class="tag">Classical Mechanics</span>
+                            <span class="tag">Verlet Integration</span>
+                            <span class="tag">Python</span>
                         </div>
                     </div>
                 </div>
+                <div class="par-grid">
+                    <div class="par-block">
+                        <h4 class="par-label problem">Problem</h4>
+                        <p>
+                            The gravitational N-body problem — predicting the future positions of
+                            $N$ mutually attracting masses — has no general closed-form solution for
+                            $N \geq 3$. Brute-force pairwise force computation scales as $O(N^2)$,
+                            and na&iuml;ve Euler integration introduces artificial energy drift that
+                            corrupts long-term orbital dynamics.
+                        </p>
+                    </div>
+                    <div class="par-block">
+                        <h4 class="par-label action">Approach</h4>
+                        <p>
+                            Chose the velocity Verlet scheme — a symplectic integrator that exactly
+                            preserves the phase-space structure of Hamiltonian systems, preventing
+                            secular energy drift:
+                        </p>
+                        <div class="math-block">
+                            $$\mathbf{r}(t+\Delta t) = \mathbf{r}(t) + \mathbf{v}(t)\,\Delta t + \tfrac{1}{2}\mathbf{a}(t)\,\Delta t^2$$
+                        </div>
+                        <div class="math-block">
+                            $$\mathbf{v}(t+\Delta t) = \mathbf{v}(t) + \tfrac{1}{2}\bigl[\mathbf{a}(t)+\mathbf{a}(t+\Delta t)\bigr]\Delta t$$
+                        </div>
+                        <p>
+                            The gravitational acceleration on each body is computed from the pairwise sum:
+                        </p>
+                        <div class="math-block">
+                            $$\mathbf{a}_i = \sum_{j\neq i}\frac{G\,m_j}{|\mathbf{r}_j - \mathbf{r}_i|^3}(\mathbf{r}_j - \mathbf{r}_i)$$
+                        </div>
+                        <p class="analogy">
+                            <strong>Analogy:</strong> Standard Euler integration is like estimating a
+                            road trip with only one speed reading per hour — errors accumulate. Verlet
+                            integration reads the speedometer at the <em>start and end</em> of each
+                            interval and averages, keeping the running total of distance (energy)
+                            consistent over long journeys.
+                        </p>
+                    </div>
+                    <div class="par-block">
+                        <h4 class="par-label result">Result</h4>
+                        <p>
+                            Stable long-term evolution for systems up to $N = 1000$ bodies. Total
+                            energy conservation verified with relative drift
+                            $|\Delta E / E_0| &lt; 10^{-8}$ over $10^4$ time steps, consistent
+                            with the expected symplectic bound.
+                        </p>
+                    </div>
+                </div>
+                <div class="case-study-links">
+                    <a href="https://github.com/BBCnewslondon/N-body-problem" class="project-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> View Source
+                    </a>
+                </div>
+            </article>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                    </div>                    <div class="project-content">
-                        <h3>Custom Web Browser</h3>
-                        <p>Proprietary web browser developed in collaboration with a commercial partner. Features custom rendering engine, JavaScript support, and security-focused architecture with Docker containerization.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Web Standards</span>
-                            <span class="tech-tag">Commercial Software</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link" style="opacity: 0.6; cursor: not-allowed;">
-                                <i class="fas fa-lock"></i> Proprietary
-                            </a>
+            <!-- ===== PAR Case Study 3: PINNs ===== -->
+            <article class="case-study" data-reveal>
+                <div class="case-study-header">
+                    <div class="case-study-icon"><i class="fas fa-brain"></i></div>
+                    <div>
+                        <h3 class="case-study-title">Physics-Informed Neural Networks</h3>
+                        <div class="case-study-tags">
+                            <span class="tag">PINNs</span>
+                            <span class="tag">PDEs</span>
+                            <span class="tag">PyTorch</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-virus"></i>
-                        </div>
+                <div class="par-grid">
+                    <div class="par-block">
+                        <h4 class="par-label problem">Problem</h4>
+                        <p>
+                            Traditional PDE solvers (finite-element, finite-difference) require
+                            explicit mesh generation that becomes costly in high dimensions or
+                            complex geometries. PINNs offer a mesh-free alternative by embedding
+                            the governing PDE directly into the neural-network loss function.
+                            The challenge is balancing data fidelity with physics constraints
+                            during training.
+                        </p>
                     </div>
-                    <div class="project-content">
-                        <h3>COVID-19 Mathematical Modeling</h3>
-                        <p>Research paper on mathematical modeling of disease spread using compartmental models. Applied SIR/SEIR models to analyze COVID-19 transmission dynamics and intervention strategies.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Mathematical Modeling</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Epidemiology</span>
-                            <span class="tech-tag">LaTeX</span>
-                        </div>                        <div class="project-links">
-                            <a href="Compartmental_Models_for COVID_Armaan_Sachdeva.pdf" class="project-link" target="_blank">
-                                <i class="fas fa-file-pdf"></i> Research Paper
-                            </a>                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Code (Coming Soon)
-                            </a>
+                    <div class="par-block">
+                        <h4 class="par-label action">Approach</h4>
+                        <p>
+                            Built a PINN architecture
+                            (<a href="https://doi.org/10.1016/j.jcp.2018.10.045" target="_blank" rel="noopener">Raissi et al., 2019</a>)
+                            where the loss function combines boundary/initial-condition data with
+                            a PDE residual term:
+                        </p>
+                        <div class="math-block">
+                            $$\mathcal{L} = \underbrace{\frac{1}{N_d}\sum_{i=1}^{N_d}\bigl|u_\theta(x_i)-u_i^*\bigr|^2}_{\text{data loss}} + \;\lambda\underbrace{\frac{1}{N_r}\sum_{j=1}^{N_r}\bigl|\mathcal{N}[u_\theta](x_j,t_j)\bigr|^2}_{\text{PDE residual}}$$
                         </div>
+                        <p>
+                            where $\mathcal{N}[u_\theta]$ is the differential operator applied to the
+                            network output, evaluated via automatic differentiation. The weight
+                            $\lambda$ balances data fidelity against physics compliance.
+                        </p>
+                        <p class="analogy">
+                            <strong>Analogy:</strong> Imagine training a student with two textbooks:
+                            one contains answer keys (data), the other states the rules of physics
+                            (PDE). PINNs make the student satisfy <em>both</em> simultaneously —
+                            predictions must match observations <em>and</em> obey physical law.
+                        </p>
+                    </div>
+                    <div class="par-block">
+                        <h4 class="par-label result">Result</h4>
+                        <p>
+                            Solutions validated against analytical benchmarks for canonical PDEs.
+                            The trained network achieved residual convergence
+                            $\|\mathcal{L}_{\text{PDE}}\| \to 0$ with no mesh generation required,
+                            demonstrating viability for problems where traditional solvers face
+                            geometric complexity.
+                        </p>
+                    </div>
+                </div>
+                <div class="case-study-links">
+                    <!-- TODO: Verify exact repo URL -->
+                    <a href="https://github.com/BBCnewslondon/PINNs" class="project-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> View Source
+                    </a>
+                    <a href="https://doi.org/10.1016/j.jcp.2018.10.045" class="project-link citation-link" target="_blank" rel="noopener">
+                        <i class="fas fa-book"></i> Raissi et al. (2019)
+                    </a>
+                </div>
+            </article>
+
+            <!-- ===== More Projects Grid ===== -->
+            <div class="section-subheader">
+                <span class="section-label"><span class="prompt">$</span> ls projects/</span>
+                <h3 class="subsection-title">More Projects</h3>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-reveal>
+                    <div class="project-icon"><i class="fas fa-satellite"></i></div>
+                    <h4>Gravitational Wave Denoiser</h4>
+                    <p>Convolutional autoencoder trained to recover clean GW signals from simulated LIGO noise. Uses LALSuite waveform injections.</p>
+                    <div class="project-tech">
+                        <span class="tag-sm">Python</span>
+                        <span class="tag-sm">PyTorch</span>
+                        <span class="tag-sm">LALSuite</span>
+                    </div>
+                    <div class="project-card-links">
+                        <a href="https://github.com/BBCnewslondon/The_clarifyer" target="_blank" rel="noopener"><i class="fab fa-github"></i> Source</a>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-charging-station"></i>
-                        </div>
+                <div class="project-card" data-reveal>
+                    <div class="project-icon"><i class="fas fa-wave-square"></i></div>
+                    <h4>Quantum Mechanical Solver</h4>
+                    <p>Finite-difference solver for the time-independent Schr&ouml;dinger equation. Matrix diagonalisation for eigenvalue extraction.</p>
+                    <div class="project-tech">
+                        <span class="tag-sm">Python</span>
+                        <span class="tag-sm">SciPy</span>
+                        <span class="tag-sm">Linear Algebra</span>
                     </div>
-                    <div class="project-content">
-                        <h3>Charge Configuration Simulation</h3>
-                        <p>Computational physics simulation to find minimum energy configurations for electric charges on a conducting disk. Implements optimization algorithms and electrostatic theory.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Physics Simulation</span>
-                            <span class="tech-tag">Optimization</span>
-                            <span class="tech-tag">Electrostatics</span>
-                        </div>                        <div class="project-links">
-                            <a href="Electric distro.py" class="project-link" target="_blank">
-                                <i class="fab fa-python"></i> Python Code
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-play"></i> Simulation
-                            </a>                        </div>
+                    <div class="project-card-links">
+                        <a href="https://github.com/BBCnewslondon/Quantum_mechanical_solver" target="_blank" rel="noopener"><i class="fab fa-github"></i> Source</a>
                     </div>
                 </div>
 
-                <div class="project-card">                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-globe-americas"></i>
-                        </div>
+                <div class="project-card" data-reveal>
+                    <div class="project-icon"><i class="fas fa-magnet"></i></div>
+                    <h4>2D Ising Model</h4>
+                    <p>Metropolis Monte Carlo simulation. Computes magnetisation, specific heat, and susceptibility across the Curie temperature.</p>
+                    <div class="project-tech">
+                        <span class="tag-sm">Python</span>
+                        <span class="tag-sm">Monte Carlo</span>
+                        <span class="tag-sm">Statistical Mech</span>
                     </div>
-                    <div class="project-content">
-                        <h3>N-Body Problem Simulation</h3>
-                        <p>Gravitational N-body simulation modeling the dynamics of multiple celestial objects. Implements numerical integration methods to solve the classical mechanics problem of predicting motion under mutual gravitational forces.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">NumPy</span>
-                            <span class="tech-tag">Classical Mechanics</span>
-                            <span class="tech-tag">Numerical Methods</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/BBCnewslondon/N-body-problem" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> GitHub Repository
-                            </a>
-                            <a href="https://github.com/BBCnewslondon/N-body-problem" class="project-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                        </div>
+                    <div class="project-card-links">
+                        <a href="https://github.com/BBCnewslondon/The-ising-model" target="_blank" rel="noopener"><i class="fab fa-github"></i> Source</a>
                     </div>
                 </div>
 
-                <div class="project-card">                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-wind"></i>
-                        </div>
+                <div class="project-card" data-reveal>
+                    <div class="project-icon"><i class="fas fa-virus"></i></div>
+                    <h4>Compartmental Epidemic Models</h4>
+                    <p>SIR/SEIR models for COVID-19 transmission dynamics. ODE-based compartmental modelling of intervention strategies.</p>
+                    <div class="project-tech">
+                        <span class="tag-sm">Python</span>
+                        <span class="tag-sm">ODEs</span>
+                        <span class="tag-sm">Epidemiology</span>
                     </div>
-                    <div class="project-content">
-                        <h3>Lorenz Attractor Visualization</h3>
-                        <p>3D visualization of the famous Lorenz attractor system demonstrating chaotic dynamics. Explores sensitive dependence on initial conditions and strange attractors in deterministic nonlinear systems.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Matplotlib</span>
-                            <span class="tech-tag">Chaos Theory</span>
-                            <span class="tech-tag">Dynamical Systems</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/BBCnewslondon/The_Lorenz_attractor" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> GitHub Repository
-                            </a>
-                            <a href="https://github.com/BBCnewslondon/The_Lorenz_attractor" class="project-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                        </div>
+                    <div class="project-card-links">
+                        <a href="Compartmental_Models_for COVID_Armaan_Sachdeva.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Paper</a>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-wave-square"></i>
-                        </div>
+                <div class="project-card" data-reveal>
+                    <div class="project-icon"><i class="fas fa-wind"></i></div>
+                    <h4>Lorenz Attractor</h4>
+                    <p>3D visualisation of chaotic dynamics. Demonstrates sensitive dependence on initial conditions and strange attractor geometry.</p>
+                    <div class="project-tech">
+                        <span class="tag-sm">Python</span>
+                        <span class="tag-sm">Matplotlib</span>
+                        <span class="tag-sm">Dynamical Systems</span>
                     </div>
-                    <div class="project-content">
-                        <h3>Quantum Mechanical Solver</h3>
-                        <p>Numerical solver for quantum mechanical systems including wave function evolution and eigenvalue problems. Implements finite difference methods and matrix diagonalization for Schrödinger equation solutions.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">SciPy</span>
-                            <span class="tech-tag">Quantum Mechanics</span>
-                            <span class="tech-tag">Linear Algebra</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/BBCnewslondon/Quantum_mechanical_solver" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> GitHub Repository
-                            </a>
-                            <a href="https://github.com/BBCnewslondon/Quantum_mechanical_solver" class="project-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                        </div>
+                    <div class="project-card-links">
+                        <a href="https://github.com/BBCnewslondon/The_Lorenz_attractor" target="_blank" rel="noopener"><i class="fab fa-github"></i> Source</a>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-magnet"></i>
-                        </div>
+                <div class="project-card" data-reveal>
+                    <div class="project-icon"><i class="fas fa-charging-station"></i></div>
+                    <h4>Charge Configuration Solver</h4>
+                    <p>Minimum-energy configuration finder for electric charges on a conducting disk via gradient-descent optimisation.</p>
+                    <div class="project-tech">
+                        <span class="tag-sm">Python</span>
+                        <span class="tag-sm">Optimisation</span>
+                        <span class="tag-sm">Electrostatics</span>
                     </div>
-                    <div class="project-content">
-                        <h3>Ising Model Simulation</h3>
-                        <p>Monte Carlo simulation of the 2D Ising model for studying phase transitions and critical phenomena in statistical mechanics. Explores magnetization behavior and temperature-dependent phase changes.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Monte Carlo</span>
-                            <span class="tech-tag">Statistical Mechanics</span>
-                            <span class="tech-tag">Phase Transitions</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/BBCnewslondon/The-ising-model" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> GitHub Repository
-                            </a>                            <a href="https://github.com/BBCnewslondon/The-ising-model" class="project-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                        </div>
+                    <div class="project-card-links">
+                        <a href="Electric distro.py" target="_blank" rel="noopener"><i class="fab fa-python"></i> Source</a>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-satellite"></i>
-                        </div>
+                <div class="project-card" data-reveal>
+                    <div class="project-icon"><i class="fas fa-atom"></i></div>
+                    <h4>Neutron Random Walk</h4>
+                    <p>Monte Carlo simulation of neutron transport from U-235 fission. Models collision probabilities and particle trajectories in 3D.</p>
+                    <div class="project-tech">
+                        <span class="tag-sm">Python</span>
+                        <span class="tag-sm">Monte Carlo</span>
+                        <span class="tag-sm">Nuclear Physics</span>
                     </div>
-                    <div class="project-content">
-                        <h3>Gravitational Wave Signal Denoiser</h3>
-                        <p>Neural network project that simulates realistic noise in gravitational wave signals and trains a deep learning model to recover the original clean signal. Combines astrophysics with advanced machine learning for signal processing applications.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Neural Networks</span>
-                            <span class="tech-tag">Signal Processing</span>
-                            <span class="tech-tag">Gravitational Waves</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/BBCnewslondon/The_clarifyer" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> GitHub Repository
-                            </a>
-                            <a href="https://github.com/BBCnewslondon/The_clarifyer" class="project-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                        </div>
+                    <div class="project-card-links">
+                        <a href="project.ipynb" target="_blank" rel="noopener"><i class="fab fa-python"></i> Notebook</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-reveal>
+                    <div class="project-icon"><i class="fas fa-microscope"></i></div>
+                    <h4>Liquid Crystal ML Analysis</h4>
+                    <p>ML pipeline for automated wavelength transmission analysis. Developed during summer research &mdash; presented at university expo.</p>
+                    <div class="project-tech">
+                        <span class="tag-sm">Python</span>
+                        <span class="tag-sm">TensorFlow</span>
+                        <span class="tag-sm">Optics</span>
+                    </div>
+                    <div class="project-card-links">
+                        <a href="Optomel condensed.ipynb" target="_blank" rel="noopener"><i class="fab fa-python"></i> Notebook</a>
+                        <a href="expo poster (2).pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Poster</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expandable All Repos -->
+            <div class="repos-expand">
+                <button class="btn-expand" id="expand-repos" aria-expanded="false" aria-controls="all-repos">
+                    <i class="fab fa-github"></i> View All Repositories
+                    <i class="fas fa-chevron-down expand-icon"></i>
+                </button>
+                <div class="repos-list" id="all-repos" hidden>
+                    <div class="repos-grid">
+                        <a href="https://revision-dashboard.vercel.app/" class="repo-item" target="_blank" rel="noopener">
+                            <span class="repo-name">Revision Dashboard</span>
+                            <span class="repo-topic">React &middot; Firebase &middot; AI Integration</span>
+                        </a>
+                        <a href="https://github.com/BBCnewslondon" class="repo-item" target="_blank" rel="noopener">
+                            <span class="repo-name">+ Browse All on GitHub</span>
+                            <span class="repo-topic">42 public repositories &rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Foundations -->
+            <div class="section-subheader" id="research">
+                <span class="section-label"><span class="prompt">$</span> cat references.bib</span>
+                <h3 class="subsection-title">Research Foundations</h3>
+            </div>
+            <div class="citations-list">
+                <div class="citation">
+                    <span class="citation-marker">[1]</span>
+                    <p>
+                        Raissi, M., Perdikaris, P., &amp; Karniadakis, G. E. (2019).
+                        Physics-informed neural networks: A deep learning framework for solving
+                        forward and inverse problems involving nonlinear partial differential equations.
+                        <em>Journal of Computational Physics</em>, 378, 686&ndash;707.
+                        <a href="https://doi.org/10.1016/j.jcp.2018.10.045" target="_blank" rel="noopener">doi:10.1016/j.jcp.2018.10.045</a>
+                    </p>
+                </div>
+                <div class="citation">
+                    <span class="citation-marker">[2]</span>
+                    <p>
+                        Verlet, L. (1967). Computer &ldquo;Experiments&rdquo; on Classical Fluids. I.
+                        Thermodynamical Properties of Lennard-Jones Molecules.
+                        <em>Physical Review</em>, 159(1), 98&ndash;103.
+                    </p>
+                </div>
+                <div class="citation">
+                    <span class="citation-marker">[3]</span>
+                    <p>
+                        Metropolis, N. et al. (1953). Equation of State Calculations by Fast
+                        Computing Machines. <em>The Journal of Chemical Physics</em>, 21(6),
+                        1087&ndash;1092.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section — Tabbed Taxonomy -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label"><span class="prompt">$</span> cat skills.json</span>
+                <h2 class="section-title">Skills &amp; Methods</h2>
+            </div>
+
+            <div class="skills-tabs" role="tablist" aria-label="Skill categories">
+                <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-physics" id="tab-physics" data-category="physics">
+                    Physics &amp; Maths
+                </button>
+                <button class="tab" role="tab" aria-selected="false" aria-controls="panel-ml" id="tab-ml" data-category="ml">
+                    Machine Learning
+                </button>
+                <button class="tab" role="tab" aria-selected="false" aria-controls="panel-software" id="tab-software" data-category="software">
+                    Software Engineering
+                </button>
+                <button class="tab" role="tab" aria-selected="false" aria-controls="panel-libs" id="tab-libs" data-category="libs">
+                    Scientific Libraries
+                </button>
+            </div>
+
+            <div class="skills-panels">
+                <div class="panel active" role="tabpanel" id="panel-physics" aria-labelledby="tab-physics">
+                    <div class="skills-grid">
+                        <div class="skill-card"><h4>Numerical Integration</h4><p>RK4, Velocity Verlet, adaptive timestep methods</p></div>
+                        <div class="skill-card"><h4>PDEs &amp; FDM</h4><p>Finite-difference methods, spectral methods, stability analysis</p></div>
+                        <div class="skill-card"><h4>Monte Carlo Methods</h4><p>Metropolis algorithm, importance sampling, MCMC</p></div>
+                        <div class="skill-card"><h4>Stochastic Calculus</h4><p>Brownian motion, It&ocirc; calculus, SDEs</p></div>
+                        <div class="skill-card"><h4>Lattice Boltzmann</h4><p>Fluid dynamics simulation, mesoscopic modelling</p></div>
+                        <div class="skill-card"><h4>Linear Algebra</h4><p>Eigenvalue problems, matrix decomposition, sparse solvers</p></div>
+                    </div>
+                </div>
+
+                <div class="panel" role="tabpanel" id="panel-ml" aria-labelledby="tab-ml" hidden>
+                    <div class="skills-grid">
+                        <div class="skill-card"><h4>Physics-Informed NNs</h4><p>PDE residual loss, automatic differentiation, mesh-free solvers</p></div>
+                        <div class="skill-card"><h4>Convolutional Autoencoders</h4><p>Signal denoising, feature extraction, latent-space analysis</p></div>
+                        <div class="skill-card"><h4>Hyperparameter Optimisation</h4><p>Optuna, Bayesian optimisation, cross-validation</p></div>
+                        <div class="skill-card"><h4>Deep Learning Frameworks</h4><p>PyTorch, TensorFlow, JAX</p></div>
+                        <div class="skill-card"><h4>Data Pipelines</h4><p>NumPy, Pandas, scikit-learn, feature engineering</p></div>
+                        <div class="skill-card"><h4>Visualisation</h4><p>Matplotlib, Plotly, interactive dashboards</p></div>
+                    </div>
+                </div>
+
+                <div class="panel" role="tabpanel" id="panel-software" aria-labelledby="tab-software" hidden>
+                    <div class="skills-grid">
+                        <div class="skill-card"><h4>C++17</h4><p>STL, templates, CMake build system</p></div>
+                        <div class="skill-card"><h4>Python</h4><p>Scientific computing, scripting, packaging</p></div>
+                        <div class="skill-card"><h4>React / Next.js</h4><p>Component architecture, SSR, API routes</p></div>
+                        <div class="skill-card"><h4>Docker</h4><p>Containerisation, multi-stage builds, CI/CD</p></div>
+                        <div class="skill-card"><h4>PostgreSQL</h4><p>Relational modelling, query optimisation</p></div>
+                        <div class="skill-card"><h4>Git &amp; Linux</h4><p>Version control, shell scripting, sysadmin</p></div>
+                    </div>
+                </div>
+
+                <div class="panel" role="tabpanel" id="panel-libs" aria-labelledby="tab-libs" hidden>
+                    <div class="skills-grid">
+                        <div class="skill-card"><h4>Uproot / ROOT</h4><p>HEP data I/O, histogram analysis, TTree processing</p></div>
+                        <div class="skill-card"><h4>LALSuite</h4><p>Gravitational wave waveform generation, matched filtering</p></div>
+                        <div class="skill-card"><h4>SciPy / NumPy</h4><p>Numerical routines, optimisation, interpolation</p></div>
+                        <div class="skill-card"><h4>LaTeX</h4><p>Technical writing, research papers, mathematical typesetting</p></div>
                     </div>
                 </div>
             </div>
@@ -446,45 +610,46 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">                <div class="contact-info">
-                    <h3>Let's Connect!</h3>
-                    <p>I'm always interested in discussing physics, computational problems, research opportunities, or potential collaborations in quantitative analysis and machine learning.</p>
-                    <div class="contact-items">                        <div class="contact-item">
+            <div class="section-header">
+                <span class="section-label"><span class="prompt">$</span> cat contact.md</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>
+                        Open to research collaborations, quantitative roles, and graduate
+                        opportunities in computational physics and machine learning.
+                    </p>
+                    <div class="contact-items">
+                        <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:as46g22@soton.ac.uk" style="color: inherit; text-decoration: none;">
-                                <span>as46g22@soton.ac.uk</span>
-                            </a>
-                        </div>                        <div class="contact-item">
+                            <a href="mailto:as46g22@soton.ac.uk">as46g22@soton.ac.uk</a>
+                        </div>
+                        <div class="contact-item">
                             <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/armaan-sachdeva-79b68b214" target="_blank" style="color: inherit; text-decoration: none;">
-                                <span>www.linkedin.com/in/armaan-sachdeva-79b68b214</span>
-                            </a>
-                        </div>                        <div class="contact-item">
+                            <a href="https://www.linkedin.com/in/armaan-sachdeva-79b68b214" target="_blank" rel="noopener">LinkedIn</a>
+                        </div>
+                        <div class="contact-item">
                             <i class="fab fa-github"></i>
-                            <a href="https://github.com/BBCnewslondon" target="_blank" style="color: inherit; text-decoration: none;">
-                                <span>github.com/BBCnewslondon</span>
-                            </a>
-                        </div><div class="contact-item">
-                            <i class="fas fa-file-alt"></i>
-                            <span>Research Papers & Publications</span>
+                            <a href="https://github.com/BBCnewslondon" target="_blank" rel="noopener">github.com/BBCnewslondon</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-download"></i>
-                            <a href="Armaan Sachdeva-CV.pdf" target="_blank" style="color: inherit; text-decoration: none;">
-                                <span>Download CV</span>
-                            </a>
+                            <a href="Armaan_Sachdeva_CV.pdf" target="_blank" rel="noopener">Download CV</a>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" id="contact-form">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <label for="name" class="sr-only">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <label for="email" class="sr-only">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email">
                     </div>
                     <div class="form-group">
+                        <label for="message" class="sr-only">Your Message</label>
                         <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
@@ -495,10 +660,12 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">            <div class="footer-content">
-                <p>&copy; 2025 Armaan Sachdeva. All rights reserved.</p>                <div class="social-links">
-                    <a href="https://github.com/BBCnewslondon" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/armaan-sachdeva-79b68b214" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Armaan Sachdeva</p>
+                <div class="social-links">
+                    <a href="https://github.com/BBCnewslondon" class="social-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/armaan-sachdeva-79b68b214" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>

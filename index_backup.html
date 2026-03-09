@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Armaan Sachdeva, a physics student specializing in computational physics, machine learning, and data analysis.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-website-url.com/">
+    <meta property="og:title" content="Armaan Sachdeva - Portfolio">
+    <meta property="og:description" content="Physics student specializing in computational physics, machine learning, and data analysis.">
+    <meta property="og:image" content="https://your-website-url.com/1703122199168.jpeg">
+    <title>Armaan Sachdeva - Portfolio</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">            <div class="nav-logo">
+                <a href="#home">Armaan Sachdeva</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>    </nav>    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas class="sierpinski-canvas" id="sierpinski-canvas"></canvas>
+        <div class="physics-equations">
+            <div class="equation equation-1">E = mc²</div>
+            <div class="equation equation-2">∇ · E = ρ/ε₀</div>
+            <div class="equation equation-3">Ψ(x,t) = Ae^(i(kx-ωt))</div>
+            <div class="equation equation-4">F = ma</div>
+            <div class="equation equation-5">∫∇²φ dV = ∮∇φ·n̂ dA</div>
+            <div class="equation equation-6">ℏ²∇²Ψ + VΨ = EΨ</div>
+            <div class="equation equation-7">∇ × E = -∂B/∂t</div>
+            <div class="equation equation-8">∇ · B = 0</div>
+            <div class="equation equation-9">∇ × B = μ₀J + μ₀ε₀∂E/∂t</div>
+            <div class="equation equation-10">Gμν = 8πTμν</div>
+            <div class="equation equation-11">Rμν - ½gμνR = 8πGTμν/c⁴</div>
+            <div class="equation equation-12">∇μTμν = 0</div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Armaan Sachdeva</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Physics Student & <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+                </p>
+                <p class="hero-description">
+                    Physics student with a minor in Mathematics and Data Analysis. Experienced in computational physics, machine learning, and quantitative analysis with a passion for solving complex problems through code.
+                </p>                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="Armaan Sachdeva-CV.pdf" class="btn btn-secondary" target="_blank">Download CV</a>
+                </div>
+            </div>            <div class="hero-image">
+                <div class="profile-photo">
+                    <img src="1703122199168.jpeg" alt="Armaan Sachdeva" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a Physics student with a minor in Mathematics and Data Analysis, passionate about applying 
+                        computational methods to solve complex scientific problems. My experience spans from theoretical 
+                        physics simulations to practical machine learning applications in research environments.
+                    </p>
+                    <p>
+                        Currently working at a quantitative trading startup, I bring together my physics background with 
+                        programming expertise to analyze data and build predictive models. My research experience includes 
+                        summer work as a research scientist studying liquid crystals and developing automated analysis systems.
+                    </p>
+                    <div class="about-stats">                        <div class="stat">
+                            <h3>11+</h3>
+                            <p>Major Projects</p>
+                        </div>
+                        <div class="stat">
+                            <h3>3+</h3>
+                            <p>Research Papers</p>
+                        </div>
+                        <div class="stat">
+                            <h3>2+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                </div>                <div class="about-image">
+                    <div class="about-photo">
+                        <img src="1703122199168.jpeg" alt="Armaan Sachdeva" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming & Scientific Computing</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>                        <div class="skill-item">
+                            <i class="fab fa-rust"></i>
+                            <span>Rust</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Analysis & ML</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>NumPy/SciPy</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Pandas</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Systems & Security</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Penetration Testing</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-file-alt"></i>
+                            <span>LaTeX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Revision Dashboard</h3>
+                        <p>A web application to help students revise for their exams, featuring flashcards, quizzes, and progress tracking.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Material-UI</span>
+                            <span class="tech-tag">Mathematical Modelling</span>
+                            <span class="tech-tag">Frontend</span>
+                            <span class="tech-tag">Backend</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">AI Integration</span>
+                            <span class="tech-tag">OCR</span>
+                            <span class="tech-tag">CAS</span>
+                            <span class="tech-tag">Hallucination Counter Measures</span>
+                            <span class="tech-tag">UI/UX Design</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">HTML</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://revision-dashboard.vercel.app/" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Neutron Random Walk Simulation</h3>
+                        <p>3D computational simulation modeling the random walk behavior of neutrons produced from U-235 fission. Implements Monte Carlo methods to track particle trajectories and collision probabilities.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">3D Visualization</span>
+                            <span class="tech-tag">Monte Carlo</span>
+                        </div>                        <div class="project-links">
+                            <a href="project.ipynb" class="project-link" target="_blank" aria-label="View Neutron Random Walk Simulation Jupyter Notebook">
+                                <i class="fab fa-python"></i> Jupyter Notebook
+                            </a>                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Demo (Coming Soon)
+                            </a>
+                        </div>
+                    </div>
+                </div>                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Liquid Crystal ML Analysis & Research</h3>
+                        <p>Machine learning model to automate wavelength transmission analysis in liquid crystals. Developed during summer research position to streamline optical property characterization. Presented findings at university research expo with comprehensive poster presentation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Optical Analysis</span>
+                            <span class="tech-tag">Research Presentation</span>
+                        </div>                        <div class="project-links">
+                            <a href="Optomel condensed.ipynb" class="project-link" target="_blank" aria-label="View Liquid Crystal ML Analysis Research Code">
+                                <i class="fab fa-python"></i> Research Code
+                            </a>
+                            <a href="expo poster (2).pdf" class="project-link" target="_blank" aria-label="View Liquid Crystal ML Analysis Research Poster">
+                                <i class="fas fa-file-pdf"></i> Research Poster
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-route"></i>
+                        </div>
+                    </div>                    <div class="project-content">
+                        <h3>Delivery Route Optimization</h3>
+                        <p>Proprietary shortest path mapping system developed in collaboration with a commercial partner. Optimizes delivery routes using advanced graph algorithms to minimize delivery time and costs.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Graph Theory</span>
+                            <span class="tech-tag">Optimization</span>
+                            <span class="tech-tag">Commercial Software</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" style="opacity: 0.6; cursor: not-allowed;">
+                                <i class="fas fa-lock"></i> Proprietary
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                    </div>                    <div class="project-content">
+                        <h3>Custom Web Browser</h3>
+                        <p>Proprietary web browser developed in collaboration with a commercial partner. Features custom rendering engine, JavaScript support, and security-focused architecture with Docker containerization.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Web Standards</span>
+                            <span class="tech-tag">Commercial Software</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" style="opacity: 0.6; cursor: not-allowed;">
+                                <i class="fas fa-lock"></i> Proprietary
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-virus"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>COVID-19 Mathematical Modeling</h3>
+                        <p>Research paper on mathematical modeling of disease spread using compartmental models. Applied SIR/SEIR models to analyze COVID-19 transmission dynamics and intervention strategies.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Mathematical Modeling</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Epidemiology</span>
+                            <span class="tech-tag">LaTeX</span>
+                        </div>                        <div class="project-links">
+                            <a href="Compartmental_Models_for COVID_Armaan_Sachdeva.pdf" class="project-link" target="_blank" aria-label="View COVID-19 Mathematical Modeling Research Paper">
+                                <i class="fas fa-file-pdf"></i> Research Paper
+                            </a>                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Code (Coming Soon)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-charging-station"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Charge Configuration Simulation</h3>
+                        <p>Computational physics simulation to find minimum energy configurations for electric charges on a conducting disk. Implements optimization algorithms and electrostatic theory.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Physics Simulation</span>
+                            <span class="tech-tag">Optimization</span>
+                            <span class="tech-tag">Electrostatics</span>
+                        </div>                        <div class="project-links">
+                            <a href="Electric distro.py" class="project-link" target="_blank" aria-label="View Charge Configuration Simulation Python Code">
+                                <i class="fab fa-python"></i> Python Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-play"></i> Simulation
+                            </a>                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>N-Body Problem Simulation</h3>
+                        <p>Gravitational N-body simulation modeling the dynamics of multiple celestial objects. Implements numerical integration methods to solve the classical mechanics problem of predicting motion under mutual gravitational forces.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Classical Mechanics</span>
+                            <span class="tech-tag">Numerical Methods</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/BBCnewslondon/N-body-problem" class="project-link" target="_blank" aria-label="View N-Body Problem Simulation GitHub Repository">
+                                <i class="fab fa-github"></i> GitHub Repository
+                            </a>
+                            <a href="https://github.com/BBCnewslondon/N-body-problem" class="project-link" target="_blank" aria-label="View N-Body Problem Simulation Project">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Lorenz Attractor Visualization</h3>
+                        <p>3D visualization of the famous Lorenz attractor system demonstrating chaotic dynamics. Explores sensitive dependence on initial conditions and strange attractors in deterministic nonlinear systems.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Chaos Theory</span>
+                            <span class="tech-tag">Dynamical Systems</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/BBCnewslondon/The_Lorenz_attractor" class="project-link" target="_blank" aria-label="View Lorenz Attractor Visualization GitHub Repository">
+                                <i class="fab fa-github"></i> GitHub Repository
+                            </a>
+                            <a href="https://github.com/BBCnewslondon/The_Lorenz_attractor" class="project-link" target="_blank" aria-label="View Lorenz Attractor Visualization Project">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Quantum Mechanical Solver</h3>
+                        <p>Numerical solver for quantum mechanical systems including wave function evolution and eigenvalue problems. Implements finite difference methods and matrix diagonalization for Schrödinger equation solutions.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SciPy</span>
+                            <span class="tech-tag">Quantum Mechanics</span>
+                            <span class="tech-tag">Linear Algebra</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/BBCnewslondon/Quantum_mechanical_solver" class="project-link" target="_blank" aria-label="View Quantum Mechanical Solver GitHub Repository">
+                                <i class="fab fa-github"></i> GitHub Repository
+                            </a>
+                            <a href="https://github.com/BBCnewslondon/Quantum_mechanical_solver" class="project-link" target="_blank" aria-label="View Quantum Mechanical Solver Project">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-magnet"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Ising Model Simulation</h3>
+                        <p>Monte Carlo simulation of the 2D Ising model for studying phase transitions and critical phenomena in statistical mechanics. Explores magnetization behavior and temperature-dependent phase changes.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Monte Carlo</span>
+                            <span class="tech-tag">Statistical Mechanics</span>
+                            <span class="tech-tag">Phase Transitions</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/BBCnewslondon/The-ising-model" class="project-link" target="_blank" aria-label="View Ising Model Simulation GitHub Repository">
+                                <i class="fab fa-github"></i> GitHub Repository
+                            </a>                            <a href="https://github.com/BBCnewslondon/The-ising-model" class="project-link" target="_blank" aria-label="View Ising Model Simulation Project">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Gravitational Wave Signal Denoiser</h3>
+                        <p>Neural network project that simulates realistic noise in gravitational wave signals and trains a deep learning model to recover the original clean signal. Combines astrophysics with advanced machine learning for signal processing applications.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Neural Networks</span>
+                            <span class="tech-tag">Signal Processing</span>
+                            <span class="tech-tag">Gravitational Waves</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/BBCnewslondon/The_clarifyer" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub Repository
+                            </a>
+                            <a href="https://github.com/BBCnewslondon/The_clarifyer" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">                <div class="contact-info">
+                    <h3>Let's Connect!</h3>
+                    <p>I'm always interested in discussing physics, computational problems, research opportunities, or potential collaborations in quantitative analysis and machine learning.</p>
+                    <div class="contact-items">                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:as46g22@soton.ac.uk" style="color: inherit; text-decoration: none;">
+                                <span>as46g22@soton.ac.uk</span>
+                            </a>
+                        </div>                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/armaan-sachdeva-79b68b214" target="_blank" style="color: inherit; text-decoration: none;">
+                                <span>www.linkedin.com/in/armaan-sachdeva-79b68b214</span>
+                            </a>
+                        </div>                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/BBCnewslondon" target="_blank" style="color: inherit; text-decoration: none;">
+                                <span>github.com/BBCnewslondon</span>
+                            </a>
+                        </div><div class="contact-item">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Research Papers & Publications</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-download"></i>
+                            <a href="Armaan Sachdeva-CV.pdf" target="_blank" style="color: inherit; text-decoration: none;">
+                                <span>Download CV</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">            <div class="footer-content">
+                <p>&copy; 2025 Armaan Sachdeva. All rights reserved.</p>                <div class="social-links">
+                    <a href="https://github.com/BBCnewslondon" class="social-link" target="_blank" aria-label="View my GitHub profile"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/armaan-sachdeva-79b68b214" class="social-link" target="_blank" aria-label="View my LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>
