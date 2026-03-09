@@ -644,6 +644,7 @@ section {
     background: var(--bg-secondary);
     border-radius: var(--radius-md);
     border-left: 3px solid var(--border);
+    overflow: hidden;
 }
 
 .par-label {
@@ -682,6 +683,14 @@ section {
     border: 1px solid var(--border);
     overflow-x: auto;
     text-align: center;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.math-block mjx-container {
+    max-width: 100%;
+    overflow-x: auto;
+    display: inline-block;
 }
 
 /* Analogy callout */
@@ -1335,6 +1344,7 @@ section {
 
     .case-study {
         padding: 1.5rem;
+        overflow: hidden;
     }
 
     .case-study-header {
@@ -1457,13 +1467,23 @@ section {
         text-align: center;
     }
 
+    .case-study {
+        padding: 1rem;
+        overflow: hidden;
+    }
+
     .case-study-title {
         font-size: 1.2rem;
     }
 
-    .math-block {
+    .par-block {
         padding: 0.75rem;
-        font-size: 0.85rem;
+        overflow: hidden;
+    }
+
+    .math-block {
+        padding: 0.5rem;
+        font-size: 0.75rem;
     }
 
     .terminal-body {
