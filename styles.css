@@ -753,6 +753,9 @@ section {
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     padding: 1.5rem;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
     transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -958,6 +961,7 @@ section {
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: 2rem;
+    min-height: 220px;
     display: flex;
     gap: 1.25rem;
     align-items: flex-start;
